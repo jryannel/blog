@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Example Blog</title><link href="http://jryannel.github.io/blog/" rel="alternate"></link><link href="http://jryannel.github.io/blog/feeds/arch.atom.xml" rel="self"></link><id>http://jryannel.github.io/blog/</id><updated>2013-07-19T00:00:00+02:00</updated><entry><title>Architecture 001</title><link href="http://jryannel.github.io/blog/architecture-001.html" rel="alternate"></link><updated>2013-07-19T00:00:00+02:00</updated><author><name>JRyannel</name></author><id>tag:jryannel.github.io/blog,2013-07-19:architecture-001.html</id><summary type="html">&lt;p&gt;An architecture post&lt;/p&gt;
+</summary></entry></feed>

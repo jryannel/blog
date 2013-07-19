@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Example Blog</title><link href="http://jryannel.github.io/blog/" rel="alternate"></link><link href="http://jryannel.github.io/blog/feeds/utils.atom.xml" rel="self"></link><id>http://jryannel.github.io/blog/</id><updated>2013-07-19T00:00:00+02:00</updated><entry><title>Utils 001</title><link href="http://jryannel.github.io/blog/utils-001.html" rel="alternate"></link><updated>2013-07-19T00:00:00+02:00</updated><author><name>JRyannel</name></author><id>tag:jryannel.github.io/blog,2013-07-19:utils-001.html</id><summary type="html">&lt;p&gt;A utils related post&lt;/p&gt;
+&lt;div class="section" id="how-to-call-a-function-by-name"&gt;
+&lt;h2&gt;How to call a function by name?&lt;/h2&gt;
+&lt;p&gt;You can call a function using the standard object accessor:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+root[name]()
+&lt;/pre&gt;
+&lt;p&gt;To verify that the property is really a function you can use:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+typeof root[name] === 'function'
+&lt;/pre&gt;
+&lt;p&gt;This allows you to store a callback in a &lt;tt class="docutils literal"&gt;ListModel&lt;/tt&gt;:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+ListModel {
+        id: itemModel
+        ListElement { name: 'Music': callback: 'openMusic'}
+}
+&lt;/pre&gt;
+&lt;p&gt;This is how you would use this then:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+ListView {
+        model: itemModel
+        delegate: ListItem {
+                text: model.name
+                onClicked: root[model.callback]()
+        }
+}
+&lt;/pre&gt;
+&lt;/div&gt;
+</summary></entry></feed>

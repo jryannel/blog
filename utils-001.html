@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8">
-        <title>Second Post</title>
+        <title>Utils 001</title>
         <link rel="stylesheet" href="http://jryannel.github.io/blog/theme/css/main.css">
                 <link href="http://jryannel.github.io/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Example Blog Atom Feed" />
                 
@@ -18,18 +18,18 @@
                                                     <li><a href="http://jryannel.github.io/blog/pages/about.html">about</a></li>
                                                                     <li ><a href="http://jryannel.github.io/blog/category/arch.html">arch</a></li>
                                     <li ><a href="http://jryannel.github.io/blog/category/items.html">items</a></li>
-                                    <li class="active"><a href="http://jryannel.github.io/blog/category/misc.html">misc</a></li>
+                                    <li ><a href="http://jryannel.github.io/blog/category/misc.html">misc</a></li>
                                     <li ><a href="http://jryannel.github.io/blog/category/qmljs.html">qmljs</a></li>
                                     <li ><a href="http://jryannel.github.io/blog/category/qtc.html">qtc++</a></li>
-                                    <li ><a href="http://jryannel.github.io/blog/category/utils.html">utils</a></li>
+                                    <li class="active"><a href="http://jryannel.github.io/blog/category/utils.html">utils</a></li>
                                                 </ul></nav>
         </header><!-- /#banner -->
         <section id="content" class="body">
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="http://jryannel.github.io/blog/second-post.html" rel="bookmark"
-           title="Permalink to Second Post">Second Post</a></h1>
+        <a href="http://jryannel.github.io/blog/utils-001.html" rel="bookmark"
+           title="Permalink to Utils 001">Utils 001</a></h1>
           </header>
 
     <div class="entry-content">
@@ -41,10 +41,37 @@
                 <address class="vcard author">
                 By <a class="url fn" href="http://jryannel.github.io/blog/author/jryannel.html">JRyannel</a>
         </address>
-        <p>In <a href="http://jryannel.github.io/blog/category/misc.html">misc</a>. </p>
+        <p>In <a href="http://jryannel.github.io/blog/category/utils.html">utils</a>. </p>
 
-</footer><!-- /.post-info -->      <p>This is the second post summary.</p>
-<p>And the second post content is coming here.</p>
+</footer><!-- /.post-info -->      <p>A utils related post</p>
+<div class="section" id="how-to-call-a-function-by-name">
+<h2>How to call a function by name?</h2>
+<p>You can call a function using the standard object accessor:</p>
+<pre class="literal-block">
+root[name]()
+</pre>
+<p>To verify that the property is really a function you can use:</p>
+<pre class="literal-block">
+typeof root[name] === 'function'
+</pre>
+<p>This allows you to store a callback in a <tt class="docutils literal">ListModel</tt>:</p>
+<pre class="literal-block">
+ListModel {
+        id: itemModel
+        ListElement { name: 'Music': callback: 'openMusic'}
+}
+</pre>
+<p>This is how you would use this then:</p>
+<pre class="literal-block">
+ListView {
+        model: itemModel
+        delegate: ListItem {
+                text: model.name
+                onClicked: root[model.callback]()
+        }
+}
+</pre>
+</div>
 
     </div><!-- /.entry-content -->
     
